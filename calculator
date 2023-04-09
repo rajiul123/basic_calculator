@@ -1,0 +1,41 @@
+try:
+    num1 = float(input("> "))
+    cmd = input("Enter oparand: ")
+
+    if cmd not in ["+", "-", "*", "/", "DIV", "MOD", "POWER"]:
+        print("Enter a valid command")
+    else:
+        try:
+            num2 = float(input("> "))
+            if cmd == "+":
+                result = num1 + num2
+            elif cmd == "-":
+                result = num1 - num2
+            elif cmd == "*":
+                result = num1 * num2
+            elif cmd == "/":
+                if num2 == 0:
+                    print("Zero Division Error")
+                else:
+                    result = num1 / num2
+            elif cmd == "DIV":
+                if num2 == 0:
+                    print("Zero Division Error")
+                else:
+                    result = num1 // num2
+            elif cmd == "MOD":
+                if num2 == 0:
+                    print("Zero Division Error")
+                else:
+                    result = num1 % num2
+            elif cmd == "POWER":
+                result = num1 ** num2
+        except:
+            print("Enter a valid number")
+        else:
+            if num2 > 0:
+                print(str(num1) + " " + cmd + " " + str(num2) + " = " + str(result))
+            else:
+                print(str(num1) + " " + cmd + " " + "(" + str(num2) + ")" + " = " + str(result))
+except:
+    print("Enter a valid number")
